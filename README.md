@@ -1,57 +1,56 @@
-# Exploración y Preprocesamiento de Datos para Detección de Fraude
+# Data Exploration and Preprocessing for Fraud Detection
 
-Este proyecto se centra en la exploración, preprocesamiento y visualización de datos relacionados con la detección de fraudes en solicitudes financieras. A continuación se describe el proceso realizado:
+This project focuses on the exploration, preprocessing, and visualization of data related to fraud detection in financial applications. Below is an outline of the process:
 
-## Instalación de Librerías
+## Library Installation
 
-Se utilizan las siguientes librerías de Python:
+The following Python libraries are used:
 
-- **Pandas**: Para la manipulación y análisis de datos.
-- **Seaborn y Matplotlib**: Para la visualización de datos.
-- **NumPy**: Para operaciones numéricas.
-- **Scikit-learn**: Para la implementación de modelos de machine learning.
-- **Imbalanced-learn**: Para manejar el desbalanceo de clases en los datos.
-- **Pickle**: Para guardar y cargar objetos en Python.
-- **Scipy**: Para realizar pruebas estadísticas.
+- **Pandas**: For data manipulation and analysis.
+- **Seaborn and Matplotlib**: For data visualization.
+- **NumPy**: For numerical operations.
+- **Scikit-learn**: For implementing machine learning models.
+- **Imbalanced-learn**: For handling class imbalance in data.
+- **Pickle**: For saving and loading Python objects.
+- **Scipy**: For performing statistical tests.
 
-Además, se han creado funciones personalizadas para la generación de gráficos y el entrenamiento de modelos, contenidas en los archivos `fx_graficos_fraude.py` y `fx_modelos.py`.
+Additionally, custom functions for generating plots and training models are contained in the `fx_graficos_fraude.py` and `fx_modelos.py` files.
 
-## Descripción del Proceso
+## Process Overview
 
-1. **Carga de Datos:**
-   - Se carga el dataset principal `Base.csv` y se imprime una vista previa del dataframe.
+1. **Data Loading:**
+   - The main dataset `Base.csv` is loaded, and a preview of the dataframe is printed.
 
-2. **Manejo de Valores Faltantes:**
-   - Se reemplazan valores específicos (-1) por `NaN` en algunas columnas indicadas.
-   - Se eliminan columnas con demasiados datos faltantes.
-   - Se eliminan registros con valores `NaN`.
+2. **Handling Missing Values:**
+   - Specific values (-1) are replaced with `NaN` in certain columns.
+   - Columns with too many missing values are removed.
+   - Records with `NaN` values are eliminated.
 
-3. **Transformación de Datos:**
-   - Se convierten clases numéricas a cadenas de texto para facilitar la visualización y el procesamiento de variables categóricas.
-   - Se ajustan tipos de datos, como convertir variables `float` a `int` donde corresponda.
+3. **Data Transformation:**
+   - Numeric classes are converted to strings to facilitate the visualization and processing of categorical variables.
+   - Data types are adjusted, such as converting `float` variables to `int` where appropriate.
 
-4. **Análisis Exploratorio de Datos (EDA):**
-   - Se generan gráficos de barras y boxplots para analizar la distribución de variables categóricas y numéricas.
-   - Se describe estadísticamente el conjunto de datos, tanto para variables categóricas como numéricas.
+4. **Exploratory Data Analysis (EDA):**
+   - Bar plots and box plots are generated to analyze the distribution of categorical and numerical variables.
+   - The dataset is statistically described for both categorical and numerical variables.
 
-5. **Visualización:**
-   - Se utilizan funciones personalizadas para generar subplots que permiten visualizar múltiples variables en un solo gráfico.
-   - Se describen y titulan gráficos para facilitar la interpretación de los datos.
+5. **Visualization:**
+   - Custom functions are used to generate subplots that allow for the visualization of multiple variables in a single graph.
+   - Graphs are described and titled to facilitate data interpretation.
 
-6. **Análisis de Variables Numéricas:**
-   - Se identifican y analizan variables numéricas con menos de 12 valores únicos y más de 12 valores únicos por separado.
-   - Se generan gráficos que permiten visualizar mejor la distribución de estas variables.
+6. **Numerical Variable Analysis:**
+   - Numerical variables with fewer than 12 unique values and more than 12 unique values are separately identified and analyzed.
+   - Graphs are generated to better visualize the distribution of these variables.
 
-## Resultados
+## Results
 
-Después del preprocesamiento, el dataset original, que contaba con 1 millón de registros, se redujo significativamente debido a la eliminación de valores nulos. El resultado final es un dataframe con un  porcentaje considerable de datos válidos para continuar con el análisis y la modelización.
+After preprocessing, the original dataset, which contained 1 million records, was significantly reduced due to the elimination of null values. The final result is a dataframe with a considerable percentage of valid data ready for further analysis and modeling.
 
-Este proceso es clave para garantizar que el modelo de machine learning posterior se entrene con datos limpios y representativos.
+This process is crucial to ensure that the subsequent machine learning model is trained with clean and representative data.
 
-## Consideraciones
+## Considerations
 
-- Este análisis se realizó ignorando advertencias de librerías (warnings).
-- Los gráficos se configuran utilizando el estilo de `Seaborn` y la paleta de colores `Set2`.
+- This analysis was conducted while ignoring library warnings.
+- The plots are configured using the `Seaborn` style and the `Set2` color palette.
 
-Para más detalles sobre la implementación de los modelos de machine learning o las funciones gráficas utilizadas, revisa los archivos `fx_graficos_fraude.py` y `fx_modelos.py`.
-
+For more details on the implementation of machine learning models or the graphic functions used, refer to the `fx_graficos_fraude.py` and `fx_modelos.py` files.
